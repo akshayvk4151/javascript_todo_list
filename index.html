@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/sample.js">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <script>
+
+        function checkPalindrom(string){
+            const arrayValues = string.split('');
+            const reverseArrayValues = arrayValues.reverse();
+            const reverseString = reverseArrayValues.join('');
+            if (string == reverseString){
+                document.write('is a palindrome')
+            }
+            else{
+                document.write('is not a palindrome')
+            }
+        }
+
+        const string = prompt('enter a string: ');
+        checkPalindrom(string);
+            
+        
+
+
+
+
+
+
+// 8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
+
+        //   function factorial(n){
+        //     if (n===0){
+        //         return 1;
+        //     }
+        //         return n * factorial(n-1);
+        // }
+
+
+        //   let n = parseInt(prompt("Enter a number: "));
+        //   document.write("The factorial of " + n + " is " + factorial(n));
+
+        //   second example***
+
+        // function factorial(n) {
+        //     let result = 1;
+        //     for (let i = 1; i <= n; i++) {
+        //         result = result * i;
+        //     }
+        //     return result;
+        // }
+        // let n = parseInt(prompt("Enter a number: "));
+        // document.write("The factorial of " + n + " is " + factorial(n));
+
+
+
+
+
+
+
+
+
+        // *************************************************************************************
+
+        // Check whether a given number is even or odd.A number that is divisible by 2 and generates a remainder of 0 is called an even number.An odd number is a number that is not divisible by 2. The remainder in the case of an odd number is always “1”.
+
+        // function isEvenOrOdd(num) {
+        //     if (num % 2 === 0) {
+        //         return num + " is an even number";
+        //     } else {
+        //         return num + " is an odd number";
+        //     }
+        // }
+        // var num = prompt("Enter a number:");
+        // document.write(isEvenOrOdd(num))
+
+
+
+
+        // **********************************************************************
+        // the number is armstrong or not
+
+        // var num = prompt("Enter a number:");;
+        // var check = num;
+        // var armstrong = 0;
+        // var sum = 0;
+        // var power;
+        // var len = num.toString().length;
+
+        // while (num != 0) {
+        //     armstrong = num % 10;
+        //     power = Math.pow(armstrong, len);
+        //     sum = sum + power;
+        //     num = parseInt(num / 10);
+        // }
+
+        // if (check == sum) {
+        //     document.write("It is an armstrong number");
+        // }
+        // else {
+        //     document.write("It is not an armstrong number");
+        // }
+
+
+
+
+
+
+
+
+
+
+        // Write a program to find sum of all prime numbers between 1 to n.
+
+
+        // function sumOfPrimes(n) {
+        //     let sum = 0;
+        //     for (let i = 2; i <= n; i++) {
+        //         if (isPrime(i)) {
+        //             sum += i;
+        //         }
+        //     }
+        //     return sum;
+        // }
+
+        // function isPrime(num) {
+        //     for (let i = 2; i <= Math.sqrt(num); i++) {
+        //         if (num % i === 0) {
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+        // var num = prompt("Enter a number:");
+        // document.write('sum of prime numbers is '+sumOfPrimes(num))
+
+
+        // ***************************************************************
+
+
+
+
+
+
+        // n = parseInt(prompt('enter '));
+
+        // fact = 1;
+        // for (i = 1; i < n; i++) {
+        //     fact = fact * i;
+        // }
+        // document.write('factorial of ' + n + ' is ' + fact + '.');
+
+
+    </script>
+
+</body>
+
+</html>

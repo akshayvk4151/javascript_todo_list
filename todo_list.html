@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Basics</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+    <style></style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="kitchen-title">Welcome to our kitchen</h2>
+        <div class="kitchen-header">
+            <input type="text" placeholder="Enter kitchen items here" id="kitchen-input" />
+            <button id="add-btn">Add now</button>
+        </div>
+
+        <ul id="kitchen-items-list" class="kitchen-items-list">
+
+        </ul>
+    </div>
+
+    <script>
+        let kitchenInput = document.getElementById("kitchen-input")
+        let addBtn = document.getElementById("add-btn")
+        let kitchenItemsList = document.getElementById("kitchen-items-list")
+
+        // step2
+        // add kitchen Items
+        function addKitchenItems() {
+            let kitchenInputData = kitchenInput.value
+            let li = document.createElement('li')
+
+            let spanEl = document.createElement('span')
+            spanEl.innerText = kitchenInputData
+            li.appendChild(spanEl)
+
+            li.style.css = "animation - name: slideIn;"
+          
+            kitchenItemsList.appendChild(li)
+            kitchenInput.value = ''
+            kitchenInput.focus()
+
+            // create a trash button
+            let trashBtn = document.createElement('i')
+            trashBtn.classList.add('fas', 'fa-trash')
+            li.appendChild(trashBtn)
+            console.log(trashBtn)
+
+            // create a edit button
+            let editBtn = document.createElement('i')
+            editBtn.classList.add('fas', 'fa-edit')
+            li.appendChild(editBtn)
+            console.log(li)
+
+
+
+        }
+        // delete kitchenitems
+        function deleteKitchenItem(event) {
+            // console.log(event.target.classList[0])
+            if (event.target.classList[1] === 'fa-trash') {
+                let item = event.target.parentElement
+                // FOR animation slide in and slide out
+                item.classList.add('slideOut')
+                item.addEventListener('transitionend', function () {
+                    // console.log("end")
+                    item.remove()
+                })
+                //   item.remove()
+            }
+        }
+        //edit kitchenItems
+        function editKitchenItem(event){
+            if(event.target.classList[1] === 'fa-edit'){
+                // alert('edit')
+                let editedValue = prompt("Add new text")
+                // console.log(editedValue)
+                let item = event.target.parentElement
+                let spanEl = item.querySelector('span')
+                // console.log(spanEl)
+                spanEl.innerText = editedValue
+                
+            }
+        }
+
+        // step 1
+        // add invent listner to the button
+        addBtn.addEventListener('click', addKitchenItems)
+        kitchenItemsList.addEventListener("click", deleteKitchenItem)
+        kitchenItemsList.addEventListener("click", editKitchenItem)
+    </script>
+</body>
+
+</html>
